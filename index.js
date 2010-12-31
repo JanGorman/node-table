@@ -1,0 +1,1 @@
+module.exports.node-table = requre('./lib/node-table');
