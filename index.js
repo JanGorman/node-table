@@ -1,1 +1,1 @@
-module.exports.node-table = requre('./lib/node-table');
+module.exports.table = require('./lib/node-table');
