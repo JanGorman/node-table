@@ -1,4 +1,4 @@
-var sys = require('sys'), table = require('table').table([10, 20]);
+var sys = require('sys'), table = require('table').table({ 'columnWidths': [10, 20] });
 
-// table.appendRow(['Node', 'Table']);
-// sys.puts(table.render());
+table.appendRow(['Node', 'Table'])
+sys.puts(table.render());
