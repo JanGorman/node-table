@@ -4,7 +4,7 @@
   "version": "0.1",
   "author": "Jan Gorman <gorman.jan@gmail.com>",
   "keywords": ["table", "cli", "text"],
-/*  "repository" : {"type": "git" , "url": "https://github.com/JanGorman/node-table" },*/
+  "repository" : {"type": "git" , "url": "https://github.com/JanGorman/node-table" },
   "main": "./",
   "engines": { "node": ">= 0.2.0" }
 }
