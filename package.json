@@ -1,9 +1,10 @@
 {
   "name": "table",
   "description": "Node Tables",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Jan Gorman <gorman.jan@gmail.com>",
   "keywords": ["table", "cli", "text"],
+  "dependencies": { "vows": ">=0.5.3"},
   "repository" : {"type": "git" , "url": "https://github.com/JanGorman/node-table" },
   "main": "./",
   "engines": { "node": ">= 0.2.0" }
