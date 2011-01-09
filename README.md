@@ -33,6 +33,8 @@ will result in a nice looking table:
     
 Valid alignments are 'left', 'center' and 'right'.
 
-## TODOs
+## Test
 
-* Some proper testing
+To run the test simply call
+
+    node test/render.test.js
