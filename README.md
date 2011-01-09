@@ -18,7 +18,7 @@ table is a component to create text based tables. This might be useful for text 
     	.appendRow(["Fourth\nsecond line", 'Row']);
     sys.puts(table.render());
     
-Results in a nice looking table:
+will result in a nice looking table:
 
     +---------------+--------------------+
     |Node           |       Table        |
@@ -35,5 +35,4 @@ Valid alignments are 'left', 'center' and 'right'.
 
 ## TODOs
 
-* Handle Row Objects as well as arrays in appendRow
 * Some proper testing
