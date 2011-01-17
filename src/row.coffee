@@ -35,7 +35,7 @@ class Row
     for column in columns
       colspan = column.getColspan() || 1
       if colNum + colspan > columnWidths.length
-        throw new Error('There are too many columns')
+        throw new Error 'There are too many columns'
       slice = if colNum + 1 == columnWidths.length then columnWidths.slice(colNum) else columnWidths.slice(colNum, colspan)
       columnWidth = (colspan - 1) + sum slice
       result = column.render(columnWidth, padding).split "\n"

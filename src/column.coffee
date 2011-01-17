@@ -26,7 +26,7 @@ class Column
     padding = padding || 0
     columnWidth -= padding * 2
     if columnWidth < 1
-      throw new Error("""Padding #{padding} is greater than the column width""")
+      throw new Error """Padding #{padding} is greater than the column width"""
     
     switch @align
       when alignLeft then padMode = padRight
