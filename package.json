@@ -8,6 +8,6 @@
   "repository" : {"type": "git" , "url": "https://github.com/JanGorman/node-table" },
   "directories": {
     "lib": "./lib"
-  }
+  },
   "engines": { "node": ">= 0.2.0" }
 }

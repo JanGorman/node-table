@@ -14,9 +14,9 @@ task 'build', 'Compile node-table CoffeeScript to JavaScript', ->
 task 'clean', 'Remove generated JavaScript files', ->
   exec 'rm -rf lib', handleError
   
-task 'test', 'Test the application', ->
+task 'test', 'Test the application', (options) ->
   args = [
-    
+    'spec/test_render.coffee'
   ]
   args.unshift '--spec' if options.spec
   
