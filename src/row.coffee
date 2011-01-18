@@ -13,16 +13,7 @@ class Row
     columns[columns.length] = column
     this
     
-  createColumn: (content, options) ->
-    # maybe just give the options directly
-    align = null
-    colspan = null
-    if options
-      ['align', 'colspan'].forEach((conf) ->
-        switch conf
-          when 'align' then align = options[conf]
-          when 'colspan' then colspan = options[colspan]
-      )
+  createColumn: (content, align, colspan) ->
     appendColumn new Column(content, align, colspan)
     this
     
