@@ -99,7 +99,7 @@ class Table
         throw new Error 'The row contains too many columns'
       
       data = row
-      row = new Row()
+      row = new Row
       for item, i in data
         align = defaultColumnAlignment[i] || null
         row.appendColumn new Column item, align
