@@ -22,7 +22,7 @@ class Column
         when padCenter then (
           right = Math.ceil((padlen = len - str.length) / 2)
           left = padlen - right
-          Array(len + 1).join(pad) + str + Array(right + 1).join(pad)
+          Array(left + 1).join(pad) + str + Array(right + 1).join(pad)
         )
         when padRight then str + Array(len + 1 - str.length).join(pad);
   

@@ -13,7 +13,8 @@ vows.describe('Node-Table render test').addBatch(
         .appendRow(['Third', 'Row'])
         .appendRow(["Fourth\nsecond line", 'Row'])
       table.render()
-    'we get a nice looking table': (topic) ->
+    'we get a nice looking table': (rendered) ->
+      console.log rendered
       result = [
         '+---------------+--------------------+'
         '|Node           |       Table        |'
@@ -27,5 +28,5 @@ vows.describe('Node-Table render test').addBatch(
         '+---------------+--------------------+'
         ''
       ]
-      assert.equals(topic, result.join("\n"))
+      assert.equal(rendered, result.join("\n"))
 ).export module

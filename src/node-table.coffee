@@ -39,7 +39,7 @@ class Table
         numColumns = columnWidths.length
   
         if rowNum == 0
-          result = drawBorder result, columnWidths
+          result = @drawBorder result, columnWidths
         else
           if autoSeparate & autoSeparateAll
             drawSeparator = true
@@ -90,7 +90,7 @@ class Table
         
         # Last row? Draw the table bottom
         if rowNum + 1 == numRows
-          result = drawBorder result, columnWidths
+          result = @drawBorder result, columnWidths
         
       result
   
