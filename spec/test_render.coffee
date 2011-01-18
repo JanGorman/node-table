@@ -1,6 +1,6 @@
 vows    = require 'vows'
 assert  = require 'assert'
-Table   = require 'table'
+Table   = require '../src/node-table'
 
 vows.describe('Node-Table render test').addBatch(
   'when rendering the table':
