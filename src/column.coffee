@@ -1,3 +1,5 @@
+Util    = require './util'
+
 class Column
   alignLeft    = 'left'
   alignCenter  = 'center'
@@ -5,6 +7,8 @@ class Column
   padLeft      = 'left'
   padCenter    = 'center'
   padRight     = 'right'
+  
+  repeat = Util.repeat
   
   constructor: (@content, @align, @colspan) ->
   
@@ -34,10 +38,10 @@ class Column
       when alignRight then padMode = padLeft
       else padMode = padRight
 
-    lines = content.split "\n"
+    lines = @content.split "\n"
     paddedLines = []
-    for i in lines
-      paddedLines.push( repeat(' ', padding) + pad(item, columnWidth, ' ', padMode) + repeat(' ', padMode))
+    for item in lines
+      paddedLines.push( repeat(' ', padding) + @pad(item, columnWidth, ' ', padMode) + repeat(' ', padMode))
     paddedLines.join("\n")
   
 module.exports = Column

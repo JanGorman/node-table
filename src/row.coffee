@@ -30,7 +30,8 @@ class Row
     padding = padding || 0
     if columns.length == 0
       appendColumn new Column()
-      
+
+    rendered = []  
     colNum = maxHeight = 0
     for column in columns
       colspan = column.getColspan() || 1

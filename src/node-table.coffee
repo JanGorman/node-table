@@ -12,7 +12,6 @@ class Table
   vertical            = '|'
   
   padding                 = 0
-  tableColumnWidths       = null
   defaultColumnAlignment  = []
   rows                    = []
   autoSeparate            = autoSeparateAll
@@ -35,7 +34,7 @@ class Table
         if columnWidths
           lastColumnWidths = columnWidths
           
-        renderedRow = row.render(tableColumnWidths, padding)
+        renderedRow = row.render(@columnWidths, padding)
         columnWidths = row.getColumnWidths()
         numColumns = columnWidths.length
   
@@ -58,9 +57,9 @@ class Table
             currentUpperWidth   = 0
             currentLowerWidth   = 0
             
-            for columnWidth, columnNum in tableColumnWidths
+            for columnWidth, columnNum in @columnWidths
               result += repeat horizontal, columnWidth
-              if columnNum + 1 == tableColumnWidths.length
+              if columnNum + 1 == @columnWidths.length
                 break
                 
               connector = 0x0
@@ -96,7 +95,7 @@ class Table
       result
   
     appendRow: (row) ->
-      if row.length > tableColumnWidths.length
+      if row.length > @columnWidths.length
         throw new Error 'The row contains too many columns'
       
       data = row
