@@ -14,7 +14,6 @@ vows.describe('Node-Table render test').addBatch(
         .appendRow(["Fourth\nsecond line", 'Row'])
       table.render()
     'we get a nice looking table': (rendered) ->
-      console.log rendered
       result = [
         '+---------------+--------------------+'
         '|Node           |       Table        |'

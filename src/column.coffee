@@ -24,7 +24,7 @@ class Column
           left = padlen - right
           Array(left + 1).join(pad) + str + Array(right + 1).join(pad)
         )
-        when padRight then str + Array(len + 1 - str.length).join(pad);
+        when padRight then str + Array(len + 1 - str.length).join(pad)
   
   render: (columnWidth, padding) ->
     padding = padding || 0
@@ -41,7 +41,7 @@ class Column
     lines = @content.split "\n"
     paddedLines = []
     for item in lines
-      paddedLines.push( repeat(' ', padding) + @pad(item, columnWidth, ' ', padMode) + repeat(' ', padMode))
+      paddedLines[paddedLines.length] = repeat(' ', padding) + @pad(item, columnWidth, ' ', padMode) + repeat(' ', padding)
     paddedLines.join("\n")
   
 module.exports = Column
