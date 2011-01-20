@@ -20,7 +20,7 @@ class Row
     this
     
   render: (columnWidths, padding) ->
-    padding = padding || 0
+    padding or= 0
     if @columns.length == 0
       appendColumn new Column
 
@@ -30,7 +30,7 @@ class Row
       colspan = column.getColspan() || 1
       if colNum + colspan > columnWidths.length
         throw new Error 'There are too many columns'
-      slice = if colNum + 1 == columnWidths.length then columnWidths.slice(colNum) else columnWidths.slice(colNum, colspan)
+      slice = if colNum + 1 == columnWidths.length then columnWidths[colNum..columnWidths.length] else columnWidths[colNum...colspan]
       columnWidth = (colspan - 1) + sum slice
       result = column.render(columnWidth, padding).split "\n"
       @columnWidths[@columnWidths.length] = columnWidth
