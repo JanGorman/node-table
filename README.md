@@ -33,8 +33,14 @@ will result in a nice looking table:
     
 Valid alignments are 'left', 'center' and 'right'.
 
+## Build
+
+To build the project call
+
+    cake build
+
 ## Test
 
 To run the test simply call
 
-    node test/render.test.js
+    cake test

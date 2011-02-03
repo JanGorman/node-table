@@ -9,7 +9,7 @@ print = (data) -> console.log data.toString().trim()
 option 's', '--spec', 'Use Vows spec mode'
 
 task 'build', 'Compile node-table CoffeeScript to JavaScript', ->
-  exec 'mkdir -p lib && ln -sf ../src/node-table.desc lib && coffee -c -o lib src', handleError
+  exec 'mkdir -p lib && coffee -c -o lib src', handleError
   
 task 'clean', 'Remove generated JavaScript files', ->
   exec 'rm -rf lib', handleError
