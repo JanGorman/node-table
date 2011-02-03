@@ -33,7 +33,7 @@ class Table
       for row, rowNum in rows
         if columnWidths
           lastColumnWidths = columnWidths
-          
+  
         renderedRow = row.render(@columnWidths, padding)
         columnWidths = row.getColumnWidths()
         numColumns = columnWidths.length

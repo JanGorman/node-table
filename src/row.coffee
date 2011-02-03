@@ -27,10 +27,11 @@ class Row
     rendered = []  
     colNum = maxHeight = 0
     for column in @columns
-      colspan = column.getColspan() || 1
+      colspan = column.getColspan()
       if colNum + colspan > columnWidths.length
         throw new Error 'There are too many columns'
-      slice = if colNum + 1 == columnWidths.length then columnWidths[colNum..columnWidths.length] else columnWidths[colNum...colspan]
+      # array slicing has some annyoing limitations in JS
+      slice = if colNum == 0 || colNum == colspan then [columnWidths[colNum]] else columnWidths[colspan...colNum]
       columnWidth = (colspan - 1) + sum slice
       result = column.render(columnWidth, padding).split "\n"
       @columnWidths[@columnWidths.length] = columnWidth

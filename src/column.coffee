@@ -11,6 +11,7 @@ class Column
   repeat = Util.repeat
   
   constructor: (@content, @align, @colspan) ->
+    @colspan or= 1
   
   getColspan: ->
     @colspan
