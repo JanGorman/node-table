@@ -8,8 +8,9 @@ table is a component to create text based tables. This might be useful for text 
 
 ## Example
 
-    var sys = require('sys'), table = require('table').table({ 'columnWidths': [15, 20] });
+    var sys = require('sys'), Table = require('table');
 
+    var table = new Table( [15, 20] );
     table
     	.setDefaultColumnAlignment(['left', 'center'])
     	.appendRow(['Node', 'Table'])
