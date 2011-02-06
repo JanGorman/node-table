@@ -20,17 +20,18 @@ class Row
     this
     
   render: (columnWidths, padding) ->
-    padding = padding || 0
+    padding or= 0
     if @columns.length == 0
       appendColumn new Column
 
     rendered = []  
     colNum = maxHeight = 0
     for column in @columns
-      colspan = column.getColspan() || 1
+      colspan = column.getColspan()
       if colNum + colspan > columnWidths.length
         throw new Error 'There are too many columns'
-      slice = if colNum + 1 == columnWidths.length then columnWidths.slice(colNum) else columnWidths.slice(colNum, colspan)
+      # array slicing has some annyoing limitations in JS
+      slice = @betterSlice(columnWidths, colNum, colspan)
       columnWidth = (colspan - 1) + sum slice
       result = column.render(columnWidth, padding).split "\n"
       @columnWidths[@columnWidths.length] = columnWidth
@@ -58,6 +59,15 @@ class Row
       line++
 
     result
+    
+  betterSlice: (array, offset, length) ->
+    if !length
+      slice = array.slice offset
+    else if length >= 0
+      slice = array.slice offset, (offset + length)
+    else
+      slice = array.slice offset, length;
+    slice
       
   getColumnWidths: ->
     @columnWidths

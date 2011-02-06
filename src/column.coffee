@@ -11,6 +11,7 @@ class Column
   repeat = Util.repeat
   
   constructor: (@content, @align, @colspan) ->
+    @colspan or= 1
   
   getColspan: ->
     @colspan
@@ -27,7 +28,7 @@ class Column
         when padRight then str + Array(len + 1 - str.length).join(pad)
   
   render: (columnWidth, padding) ->
-    padding = padding || 0
+    padding or= 0
     columnWidth -= padding * 2
     if columnWidth < 1
       throw new Error """Padding #{padding} is greater than the column width"""
