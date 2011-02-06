@@ -31,7 +31,7 @@ class Row
       if colNum + colspan > columnWidths.length
         throw new Error 'There are too many columns'
       # array slicing has some annyoing limitations in JS
-      slice = if colNum == 0 || colNum == colspan then [columnWidths[colNum]] else columnWidths[colspan...colNum]
+      slice = @betterSlice(columnWidths, colNum, colspan)
       columnWidth = (colspan - 1) + sum slice
       result = column.render(columnWidth, padding).split "\n"
       @columnWidths[@columnWidths.length] = columnWidth
@@ -59,6 +59,15 @@ class Row
       line++
 
     result
+    
+  betterSlice: (array, offset, length) ->
+    if !length
+      slice = array.slice offset
+    else if length >= 0
+      slice = array.slice offset, (offset + length)
+    else
+      slice = array.slice offset, length;
+    slice
       
   getColumnWidths: ->
     @columnWidths
