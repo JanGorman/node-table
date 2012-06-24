@@ -8,7 +8,7 @@ table is a component to create text based tables. This might be useful for text 
 
 ## Example
 
-    var sys = require('sys'), Table = require('table');
+    var util = require('util'), Table = require('table');
 
     var table = new Table( [15, 20] );
     table
@@ -17,7 +17,7 @@ table is a component to create text based tables. This might be useful for text 
     	.appendRow(['Second', 'Row'])
     	.appendRow(['Third', 'Row'])
     	.appendRow(["Fourth\nsecond line", 'Row']);
-    sys.puts(table.render());
+    util.puts(table.render());
     
 will result in a nice looking table:
 
